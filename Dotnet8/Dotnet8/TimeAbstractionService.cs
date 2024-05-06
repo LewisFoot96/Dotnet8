@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dotnet8
+﻿namespace Dotnet8
 {
     public class TimeAbstractionService
     {
@@ -19,7 +13,7 @@ namespace Dotnet8
         {
             var currentTime = _timeProvider.GetUtcNow();
 
-            var message = currentTime.Hour switch
+            var timeOfDayMessage = currentTime.Hour switch
             {
                 >= 6 and <= 12 => "Morning",
                 > 12 and <= 18 => "Afternoon",
@@ -27,7 +21,7 @@ namespace Dotnet8
                 _ => "Night"
             };
 
-            return message;
+            return timeOfDayMessage;
         }
     }
 }
